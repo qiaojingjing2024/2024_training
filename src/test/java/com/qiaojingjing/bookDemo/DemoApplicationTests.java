@@ -1,4 +1,4 @@
-package com.qiaojingjing.demo;
+package com.qiaojingjing.bookDemo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
