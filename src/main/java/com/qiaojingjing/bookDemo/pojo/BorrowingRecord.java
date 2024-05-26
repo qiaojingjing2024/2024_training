@@ -1,19 +1,21 @@
 package com.qiaojingjing.bookDemo.pojo;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
-public class returnRecord {
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class BorrowingRecord {
     private Long id;
     private Long userId;
-    private String userName;
     private Long bookId;
     private String bookName;
-    private LocalDateTime returnTime;
+    private LocalDateTime beginTime;
+    private LocalDateTime endTime;
 }
