@@ -1,13 +1,15 @@
 package com.qiaojingjing.bookDemo.pojo;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class administrator {
+@Builder
+public class Administrator {
     private Long id;
     private String name;
     private String username;
