@@ -34,7 +34,8 @@ CREATE TABLE BorrowingRecords (
                                   user_name VARCHAR(50) NOT NULL,
                                   book_id BIGINT NOT NULL,
                                   book_name VARCHAR(50) NOT NULL,
-                                  borrow_time DATETIME NOT NULL,
+                                  begin_time DATETIME NOT NULL,
+                                  end_time DATETIME NOT NULL,
                                   PRIMARY KEY (id),
                                   FOREIGN KEY (user_id) REFERENCES Borrowers(id),
                                   FOREIGN KEY (book_id) REFERENCES Books(id)

@@ -15,5 +15,6 @@ public class borrowingRecord {
     private String userName;
     private Long bookId;
     private String bookName;
-    private LocalDateTime borrowTime;
+    private LocalDateTime beginTime;
+    private LocalDateTime endTime;
 }
