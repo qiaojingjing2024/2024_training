@@ -5,9 +5,9 @@
         select id,name,author,isbn,press from books
         <where>
             <if test="name!=null and name!=''">name like concat ('%',{name},'%')</if>
-            <if test="author!=null">and author={author}</if>
-            <if test="isbn!=null">and isbn={isbn}</if>
-            <if test="press!=null">and press={press}</if>
+            <if test="author!=null">and author=#{author}</if>
+            <if test="isbn!=null">and isbn=#{isbn}</if>
+            <if test="press!=null">and press=#{press}</if>
         </where>
         order by have_borrowed desc
     </select>
