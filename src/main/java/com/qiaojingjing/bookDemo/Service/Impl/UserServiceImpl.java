@@ -14,6 +14,7 @@ import com.qiaojingjing.bookDemo.Result.PageResult;
 import com.qiaojingjing.bookDemo.Service.UserService;
 import com.qiaojingjing.bookDemo.Utils.String2Date;
 import com.qiaojingjing.bookDemo.VO.BookVO;
+import com.qiaojingjing.bookDemo.VO.BorrowedBookVO;
 import com.qiaojingjing.bookDemo.pojo.Book;
 import com.qiaojingjing.bookDemo.pojo.BorrowingRecord;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,4 +82,11 @@ public class UserServiceImpl implements UserService {
         borrowingRecordsMapper.borrow(builder);
         booksMapper.updateBooksById(bookId);
     }
+
+    @Override
+    public List<BorrowedBookVO> queryBorrowedBooks(Long userId) {
+        return borrowingRecordsMapper.query(userId);
+    }
+
+
 }

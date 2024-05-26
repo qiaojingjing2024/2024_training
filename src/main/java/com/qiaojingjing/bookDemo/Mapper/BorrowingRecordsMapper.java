@@ -1,5 +1,6 @@
 package com.qiaojingjing.bookDemo.Mapper;
 
+import com.qiaojingjing.bookDemo.VO.BorrowedBookVO;
 import com.qiaojingjing.bookDemo.pojo.BorrowingRecord;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -19,4 +20,6 @@ public interface BorrowingRecordsMapper {
 
     @Insert("insert into borrowingrecords set user_id=#{userId},book_id=#{bookId},book_name=#{bookName},begin_time=#{beginTime},end_time=#{endTime}")
     void borrow(BorrowingRecord.BorrowingRecordBuilder builder);
+
+    List<BorrowedBookVO> query(@Param("userId") Long userId);
 }

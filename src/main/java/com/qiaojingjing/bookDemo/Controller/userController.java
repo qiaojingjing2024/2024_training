@@ -7,9 +7,12 @@ import com.qiaojingjing.bookDemo.Result.PageResult;
 import com.qiaojingjing.bookDemo.Result.Result;
 import com.qiaojingjing.bookDemo.Service.UserService;
 import com.qiaojingjing.bookDemo.VO.BookVO;
+import com.qiaojingjing.bookDemo.VO.BorrowedBookVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/borrower")
@@ -33,6 +36,14 @@ public class userController {
         log.info("借阅图书,{}",borrowDTO);
         userService.borrow(borrowDTO);
         return Result.success();
+    }
+
+    //查询已经借的书接口
+    @GetMapping("/queryBooks")
+    public Result borrowedBooks(Long userId){
+        log.info("查询用户ID为{}借的书",userId);
+        List<BorrowedBookVO> list = userService.queryBorrowedBooks(userId);
+        return Result.success(list);
     }
 
 }
